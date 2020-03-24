@@ -1,0 +1,77 @@
+body, html {
+    height: 100%;
+    display: grid;
+    font-family: Gotham Rounded, sans-serif;
+    font-weight: normal;
+    background-color: rgb(53, 54, 58);
+}
+
+.container {
+    margin: auto;
+    border: solid;
+    border-color: whitesmoke;
+    border-radius: 18px;
+    height: 500px;
+    width: 500px; 
+    background-color: #ed4d4d;
+
+}
+
+.display {
+    margin: auto;
+    border: solid;
+    border-radius: 50%;
+    border-color: whitesmoke;
+    width: 200px;
+    height: 200px;
+}
+
+.title {
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.time {
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+.work {
+    color: whitesmoke;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    margin-right: 10px;
+}
+
+.pause {
+    color: whitesmoke;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.break {
+    color: whitesmoke;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    margin-left: 10px;
+}
