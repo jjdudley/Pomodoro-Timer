@@ -1,9 +1,9 @@
 body, html {
     height: 100%;
     display: grid;
-    font-family: Gotham Rounded, sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: normal;
-    background-color: rgb(53, 54, 58);
+    background-color: whitesmoke;
 }
 
 .container {
@@ -12,9 +12,8 @@ body, html {
     border-color: whitesmoke;
     border-radius: 18px;
     height: 500px;
-    width: 500px; 
+    width: 800px; 
     background-color: #ed4d4d;
-
 }
 
 .display {
@@ -27,20 +26,29 @@ body, html {
 }
 
 .title {
+    font-family: 'Raleway', sans-serif;
     color: whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 3rem;
+    letter-spacing: .3rem;
+    margin-top: 20px;
 }
 
 .time {
+    font-family: 'Raleway', sans-serif;
+    font-weight: Light;
     color: whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 3.8rem;
+    margin-top: 60px;
 }
 
 .buttons {
+    font-family: 'Raleway', sans-serif;
     border: none;
     outline: none;
     background-color: transparent;
@@ -48,30 +56,51 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 30px;
+    margin: 40px;
 }
 
 .work {
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: .1rem;
     color: whitesmoke;
     border: none;
     outline: none;
     background-color: transparent;
-    margin-right: 10px;
 }
 
 .pause {
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: .1rem;
     color: whitesmoke;
     border: none;
     outline: none;
     background-color: transparent;
-    margin-left: 10px;
-    margin-right: 10px;
 }
 
 .break {
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: .1rem;
     color: whitesmoke;
     border: none;
     outline: none;
     background-color: transparent;
-    margin-left: 10px;
+}
+
+.endTime {
+    text-align: center;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
 }
