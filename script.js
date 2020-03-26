@@ -5,7 +5,6 @@ let seconds;
 let interval;
 let breakCount = 0;
 
-
 //let timeLeft = 1500; //25 minutes- we have this from html
 const longBreak = 900; //15 minutes
 const title = document.querySelector('.title');
@@ -20,18 +19,11 @@ pauseButton.addEventListener('click', button => {
     pauseTimer();
 });
 
-workBreakBtns.forEach(button => button.addEventListener('click', commenceTimer));
-//workBreakBtns.forEach(button => {
-  //  button.addEventListener('click', () => {
-    //    commenceTimer(25);
-    //});
-//});
-    
+workBreakBtns.forEach(button => button.addEventListener('click', commenceTimer));    
 
 function timer(seconds) {
     //clear any existing timers
     clearInterval(countdown);
-
     const now = Date.now();
     const then = now + seconds * 1000; //then will equal total amount of time including timer
     displayTimeLeft(seconds);
@@ -41,7 +33,6 @@ function timer(seconds) {
         if (!isPaused) {
             secondsLeft = Math.round((then - Date.now()) / 1000);
         }
-
         //this will check if the timer should stop
         if (secondsLeft < 0) {
             clearInterval(countdown);
@@ -49,7 +40,6 @@ function timer(seconds) {
             alarm.play()
             return;
         }
-
         //to display time left
         displayTimeLeft(secondsLeft);
     }, 1000)
@@ -78,21 +68,20 @@ function commenceTimer() {
 
     const replaceText = this.textContent.replace(/\s/g, '');
     if (replaceText == 'Work') {
-        title.textContent = 'WORK';
+        title.textContent = 'Work';
     } else if (replaceText == 'Break') {
-        title.textContent = 'BREAK';
-    }
-    
-    breakCount++;
-       if (breakCount > 4) {
+        title.textContent = 'Break';
+        
+        breakCount++;
+        if (breakCount > 3) {
            breakCount = 0;
            seconds = parseInt(longBreak)
        }
 
+    }
+      
     timer(seconds);
-
 };
-
 
 function pauseTimer(){
     if (countdown != undefined) {
