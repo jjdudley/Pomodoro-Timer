@@ -15,8 +15,16 @@ const pauseButton = document.querySelector('.pause');
 const workBreakBtns = document.querySelectorAll('[data-time]');
 const alarm = document.createElement('audio');
 
-pauseButton.addEventListener('click', pauseTimer);
-workBreakBtns.forEach(button => button.addEventListener('click', commenceTimer(25)));
+pauseButton.addEventListener('click', button => {
+    pauseTimer();
+});
+
+workBreakBtns.forEach(button => {
+    button.addEventListener('click', () => {
+        commenceTimer(25);
+    });
+});
+    
 
 function timer(seconds) {
     //clear any existing timers
@@ -49,7 +57,7 @@ function displayTimeLeft(seconds) {
     const minutes = Math.floor(seconds /60);
     const remainderSeconds = seconds % 60;
     const display = `${minutes}:${remainderSeconds}`;
-    document.title = display;
+    document.title  = display;
     timeDisplay.textContent = display;
 };
 
@@ -62,9 +70,11 @@ function displayEndTime(timestamp) {
 };
 
 function commenceTimer(mins) {
+    
     seconds = mins*60 || 0;
     interval = setInterval(function() {
         seconds--;
+        displayTimeLeft(seconds);
 
         if(!seconds){
             clearInterval(interval);
