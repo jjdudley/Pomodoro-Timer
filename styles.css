@@ -72,6 +72,11 @@ body, html {
     background-color: transparent;
 }
 
+.work:focus {
+    text-shadow: 2px 2px #5a1d1d;
+}
+
+
 .pause {
     display: inline-block;
     text-align: center;
