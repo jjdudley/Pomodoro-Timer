@@ -70,30 +70,35 @@ function displayEndTime(timestamp) {
 };
 
 function commenceTimer(mins) {
+    pauseButton.classList.remove('pause-clicked')
+    isPaused = false;
+    seconds = parseInt(this.dataset.time);
     
-    seconds = mins*60 || 0;
-    interval = setInterval(function() {
-        seconds--;
-        displayTimeLeft(seconds);
-
-        if(!seconds){
-            clearInterval(interval);
-            alert("time for a break!");
-        }
-    }, 1000)
+    timer(seconds);
+//   seconds = mins*60 || 0;
+// interval = setInterval(function() {
+//        seconds--;
+//        displayTimeLeft(seconds);
+//
+//        if(!seconds){
+//            clearInterval(interval);
+//            alert("time for a break!");
+//        }
+//    }, 1000)
 };
 
 
 function pauseTimer(){
-if (isPaused) {
-    clearInterval(countdown);
-    pauseButton.classList.add('pause-clicked');
-}
-
-if (!isPaused) {
-    pauseButton.classList.remove("pause-clicked");
-
-    seconds = secondsLeft;
-    timer(seconds);
-}
+    if (countdown != undefined) {
+        if (!isPaused) {
+            isPaused = true;
+            clearInterval(countdown);
+            pauseButton.classList.add('pause-clicked')
+        } else if (isPaused) {
+            isPaused = false;
+            pauseButton.classList.remove('pause-clicked')
+            seconds = secondsLeft;
+            timer(seconds)
+        }
+    }
 };
