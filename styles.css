@@ -52,7 +52,7 @@ body, html {
     border: none;
     outline: none;
     background-color: transparent;
-    color: whitesmoke;
+    color: #812929;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,7 +66,7 @@ body, html {
     font-family: 'Raleway', sans-serif;
     font-size: 1.2rem;
     letter-spacing: .1rem;
-    color: whitesmoke;
+    color: #812929;
     border: none;
     outline: none;
     background-color: transparent;
@@ -74,6 +74,7 @@ body, html {
 
 .work:focus {
     text-shadow: 2px 2px #5a1d1d;
+    color: whitesmoke;
 }
 
 
@@ -84,10 +85,15 @@ body, html {
     font-family: 'Raleway', sans-serif;
     font-size: 1.2rem;
     letter-spacing: .1rem;
-    color: whitesmoke;
+    color: #812929;
     border: none;
     outline: none;
     background-color: transparent;
+}
+
+.pause:focus {
+    text-shadow: 2px 2px #5a1d1d;
+    color: whitesmoke;
 }
 
 .break {
@@ -97,10 +103,15 @@ body, html {
     font-family: 'Raleway', sans-serif;
     font-size: 1.2rem;
     letter-spacing: .1rem;
-    color: whitesmoke;
+    color: #812929;
     border: none;
     outline: none;
     background-color: transparent;
+}
+
+.break:focus {
+    text-shadow: 2px 2px #5a1d1d;
+    color: whitesmoke;
 }
 
 .endTime {
