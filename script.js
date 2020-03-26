@@ -14,6 +14,7 @@ const endTime = document.querySelector('.endTime');
 const pauseButton = document.querySelector('.pause');
 const workBreakBtns = document.querySelectorAll('[data-time]');
 const alarm = document.createElement('audio');
+alarm.setAttribute("src", "https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3");
 
 pauseButton.addEventListener('click', button => {
     pauseTimer();
@@ -57,7 +58,7 @@ function timer(seconds) {
 function displayTimeLeft(seconds) {
     const minutes = Math.floor(seconds /60);
     const remainderSeconds = seconds % 60;
-    const display = `${minutes}:${remainderSeconds}`;
+    const display = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
     document.title  = display;
     timeDisplay.textContent = display;
 };
@@ -67,26 +68,29 @@ function displayEndTime(timestamp) {
     const hour = end.getHours();
     const adjustedHour = hour > 12 ? hour - 12 : hour;
     const minutes = end.getMinutes();
-    endTime.textContent = `Stop At ${adjustedHour}:${minutes}`;
+    endTime.textContent = `Stop At ${adjustedHour}:${minutes < 10 ? '0' : ''}${minutes}`;
 };
 
 function commenceTimer() {
     pauseButton.classList.remove('pause-clicked')
     isPaused = false;
     seconds = parseInt(this.dataset.time);
+
+    const replaceText = this.textContent.replace(/\s/g, '');
+    if (replaceText == 'Work') {
+        title.textContent = 'WORK';
+    } else if (replaceText == 'Break') {
+        title.textContent = 'BREAK';
+    }
     
     breakCount++;
+       if (breakCount > 4) {
+           breakCount = 0;
+           seconds = parseInt(longBreak)
+       }
+
     timer(seconds);
-//   seconds = mins*60 || 0;
-// interval = setInterval(function() {
-//        seconds--;
-//        displayTimeLeft(seconds);
-//
-//        if(!seconds){
-//            clearInterval(interval);
-//            alert("time for a break!");
-//        }
-//    }, 1000)
+
 };
 
 
@@ -94,10 +98,12 @@ function pauseTimer(){
     if (countdown != undefined) {
         if (!isPaused) {
             isPaused = true;
+            isPaused = true;
             clearInterval(countdown);
             pauseButton.classList.add('pause-clicked')
         } else if (isPaused) {
             isPaused = false;
+            pauseButton.classList.remove('pause-clicked')
             pauseButton.classList.remove('pause-clicked')
             seconds = secondsLeft;
             timer(seconds)
