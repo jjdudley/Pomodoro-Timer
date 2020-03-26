@@ -19,11 +19,12 @@ pauseButton.addEventListener('click', button => {
     pauseTimer();
 });
 
-workBreakBtns.forEach(button => {
-    button.addEventListener('click', () => {
-        commenceTimer(25);
-    });
-});
+workBreakBtns.forEach(button => button.addEventListener('click', commenceTimer));
+//workBreakBtns.forEach(button => {
+  //  button.addEventListener('click', () => {
+    //    commenceTimer(25);
+    //});
+//});
     
 
 function timer(seconds) {
@@ -69,11 +70,12 @@ function displayEndTime(timestamp) {
     endTime.textContent = `Stop At ${adjustedHour}:${minutes}`;
 };
 
-function commenceTimer(mins) {
+function commenceTimer() {
     pauseButton.classList.remove('pause-clicked')
     isPaused = false;
     seconds = parseInt(this.dataset.time);
     
+    breakCount++;
     timer(seconds);
 //   seconds = mins*60 || 0;
 // interval = setInterval(function() {
