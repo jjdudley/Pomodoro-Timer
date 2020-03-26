@@ -5,7 +5,6 @@ let seconds;
 let interval;
 let breakCount = 0;
 
-//let timeLeft = 1500; //25 minutes- we have this from html
 const longBreak = 900; //15 minutes
 const title = document.querySelector('.title');
 const timeDisplay = document.querySelector('.time');
@@ -18,7 +17,6 @@ alarm.setAttribute("src", "https://www.soundjay.com/misc/sounds/bell-ringing-05.
 pauseButton.addEventListener('click', button => {
     pauseTimer();
 });
-
 workBreakBtns.forEach(button => button.addEventListener('click', commenceTimer));    
 
 function timer(seconds) {
