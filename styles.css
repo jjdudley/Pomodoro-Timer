@@ -20,9 +20,10 @@ body, html {
     margin: auto;
     border: solid;
     border-radius: 50%;
+    border-width: 4.5px;
     border-color: whitesmoke;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
 }
 
 .title {
@@ -43,8 +44,8 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3.8rem;
-    margin-top: 60px;
+    font-size: 6rem;
+    margin-top: 91px;
 }
 
 .buttons {
@@ -76,7 +77,6 @@ body, html {
     text-shadow: 2px 2px #5a1d1d;
     color: whitesmoke;
 }
-
 
 .pause {
     display: inline-block;
