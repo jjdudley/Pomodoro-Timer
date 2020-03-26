@@ -3,16 +3,15 @@ body, html {
     display: grid;
     font-family: 'Raleway', sans-serif;
     font-weight: normal;
-    background-color: whitesmoke;
+    background-color: #ed4d4d;
 }
 
 .container {
     margin: auto;
-    border: solid;
-    border-color: whitesmoke;
+    border: none;
     border-radius: 18px;
-    height: 500px;
-    width: 800px; 
+    height: 100%;
+    width: 100%; 
     background-color: #ed4d4d;
 }
 
