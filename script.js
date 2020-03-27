@@ -60,6 +60,8 @@ function displayEndTime(timestamp) {
 
 function commenceTimer() {
     pauseButton.classList.remove('pause-clicked');
+    pauseButton.innerText = "Pause";
+    pauseButton.innerHTML = '<img src="https://img.icons8.com/material-sharp/16/000000/pause.png"/> Pause'
     isPaused = false;
     seconds = parseInt(this.dataset.time);
 
@@ -86,9 +88,13 @@ function pauseTimer(){
             isPaused = true;                 // turn pause on
             clearInterval(countdown);         // stop the timer
             pauseButton.classList.add('pause-clicked') 
+            pauseButton.innerText = 'Play';
+            pauseButton.innerHTML = '<img src="https://img.icons8.com/android/16/000000/play.png"/>Play ';
         } else if (isPaused) {                // if the timer IS already paused
             isPaused = false;                 //turn pause off
             pauseButton.classList.remove('pause-clicked');
+            pauseButton.innerText = 'Pause';
+            pauseButton.innerHTML = '<img src="https://img.icons8.com/material-sharp/16/000000/pause.png"/> Pause';
             seconds = secondsLeft;            // carry on timer according to secondsLeft (which we can access bc it's a global variable)
             timer(seconds);
         };
