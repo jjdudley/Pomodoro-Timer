@@ -1,7 +1,7 @@
 body, html {
     height: 100%;
     display: grid;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: normal;
     background-color: #ed4d4d;
 }
@@ -26,7 +26,7 @@ body, html {
 }
 
 .title {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: whitesmoke;
     display: flex;
     justify-content: center;
@@ -37,7 +37,7 @@ body, html {
 }
 
 .time {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: Light;
     color: whitesmoke;
     display: flex;
@@ -48,7 +48,7 @@ body, html {
 }
 
 .buttons {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     border: none;
     outline: none;
     background-color: transparent;
@@ -59,11 +59,12 @@ body, html {
     margin: 40px;
 }
 
+
 .work {
     display: inline-block;
     text-align: center;
     text-transform: uppercase;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.2rem;
     letter-spacing: .1rem;
     color: #812929;
@@ -77,11 +78,15 @@ body, html {
     color: whitesmoke;
 }
 
+.work:hover {
+    cursor: pointer;
+}
+
 .pause {
     display: inline-block;
     text-align: center;
     text-transform: uppercase;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.2rem;
     letter-spacing: .1rem;
     color: #812929;
@@ -95,11 +100,15 @@ body, html {
     color: whitesmoke;
 }
 
+.pause:hover {
+    cursor: pointer;
+}
+
 .break {
     display: inline-block;
     text-align: center;
     text-transform: uppercase;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.2rem;
     letter-spacing: .1rem;
     color: #812929;
@@ -111,6 +120,10 @@ body, html {
 .break:focus {
     text-shadow: 2px 2px #5a1d1d;
     color: whitesmoke;
+}
+
+.break:hover {
+    cursor: pointer;
 }
 
 .endTime {

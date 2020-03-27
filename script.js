@@ -27,16 +27,16 @@ function timer(seconds) {
     displayTimeLeft(seconds);
     displayEndTime(then);
 
-    countdown = setInterval (() => {
-        if (!isPaused) {
-            secondsLeft = Math.round((then - Date.now()) / 1000);
+    countdown = setInterval (() => {  // setInterval function runs function below at interval (in mil.seconds) provided (line 43)
+        if (!isPaused) {              // if the timer is not paused
+            secondsLeft = Math.round((then - Date.now()) / 1000);   //set the time to equal to difference between start and end time (each passing second)
         }
         //this will check if the timer should stop
-        if (secondsLeft < 0) {
-            clearInterval(countdown);
-            alarm.currentTime = 0;
-            alarm.play()
-            return;
+        if (secondsLeft < 0) {             // if there is no more remaining time on the clock
+            clearInterval(countdown);      // stop the setInterval function (it will be reset upon future button clicks)
+            alarm.currentTime = 0;          
+            alarm.play();                  // & sound alarm
+            return;                        // stop errrything
         }
         //to display time left
         displayTimeLeft(secondsLeft);
@@ -47,7 +47,6 @@ function displayTimeLeft(seconds) {
     const minutes = Math.floor(seconds /60);
     const remainderSeconds = seconds % 60;
     const display = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
-    document.title  = display;
     timeDisplay.textContent = display;
 };
 
@@ -60,40 +59,38 @@ function displayEndTime(timestamp) {
 };
 
 function commenceTimer() {
-    pauseButton.classList.remove('pause-clicked')
+    pauseButton.classList.remove('pause-clicked');
     isPaused = false;
     seconds = parseInt(this.dataset.time);
 
     const replaceText = this.textContent.replace(/\s/g, '');
+
     if (replaceText == 'Work') {
         title.textContent = 'Work';
-    } else if (replaceText == 'Break') {
+        } 
+    else if (replaceText == 'Break') {
         title.textContent = 'Break';
-        
         breakCount++;
         if (breakCount > 3) {
            breakCount = 0;
-           seconds = parseInt(longBreak)
-       }
+           seconds = parseInt(longBreak);
+       };
+    };
 
-    }
-      
     timer(seconds);
 };
 
 function pauseTimer(){
-    if (countdown != undefined) {
-        if (!isPaused) {
-            isPaused = true;
-            isPaused = true;
-            clearInterval(countdown);
-            pauseButton.classList.add('pause-clicked')
-        } else if (isPaused) {
-            isPaused = false;
-            pauseButton.classList.remove('pause-clicked')
-            pauseButton.classList.remove('pause-clicked')
-            seconds = secondsLeft;
-            timer(seconds)
-        }
-    }
+    if (countdown != undefined) {            // if countdown (and consequently, setInterval) is live
+        if (!isPaused) {                     // and if the timer is not already paused
+            isPaused = true;                 // turn pause on
+            clearInterval(countdown);         // stop the timer
+            pauseButton.classList.add('pause-clicked') 
+        } else if (isPaused) {                // if the timer IS already paused
+            isPaused = false;                 //turn pause off
+            pauseButton.classList.remove('pause-clicked');
+            seconds = secondsLeft;            // carry on timer according to secondsLeft (which we can access bc it's a global variable)
+            timer(seconds);
+        };
+    };
 };
